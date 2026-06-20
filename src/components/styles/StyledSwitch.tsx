@@ -34,7 +34,8 @@ export const StyledSwitch: React.FC<StyledSwitchProps> = ({
     borderWidth: 'var(--style-border-width)',
     borderStyle: 'solid',
     borderColor: 'var(--style-border-color)',
-    background: checked ? 'var(--style-primary)' : 'var(--style-secondary)',
+    background: checked ? 'var(--style-primary-gradient)' : 'var(--style-secondary-gradient)',
+    backgroundColor: checked ? undefined : 'var(--style-secondary-color)',
     position: 'relative',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
@@ -58,7 +59,11 @@ export const StyledSwitch: React.FC<StyledSwitchProps> = ({
       <div style={trackStyle} onClick={handleToggle} role="switch" aria-checked={checked}>
         <div style={thumbStyle} />
       </div>
-      {label && <span style={{ fontFamily: 'var(--style-font)' }}>{label}</span>}
+      {label && (
+        <span style={{ fontFamily: 'var(--style-font)', color: 'var(--style-text-color)' }}>
+          {label}
+        </span>
+      )}
     </div>
   );
 };

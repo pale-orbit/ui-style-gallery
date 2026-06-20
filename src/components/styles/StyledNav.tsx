@@ -21,12 +21,13 @@ export const StyledNav: React.FC<StyledNavProps> = ({ className = '' }) => {
     gap: '8px',
     padding: '8px 16px',
     borderRadius: 'var(--style-radius)',
-    backgroundColor: 'var(--style-bg)',
+    backgroundColor: 'var(--style-bg-color)',
     borderWidth: 'var(--style-border-width)',
     borderStyle: 'solid',
     borderColor: 'var(--style-border-color)',
     boxShadow: 'var(--style-shadow)',
     backdropFilter: 'var(--style-backdrop-filter)',
+    color: 'var(--style-text-color)',
   };
 
   const itemStyle = (active: boolean): React.CSSProperties => ({
@@ -38,9 +39,11 @@ export const StyledNav: React.FC<StyledNavProps> = ({ className = '' }) => {
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     fontFamily: 'var(--style-font)',
-    background: active ? 'var(--style-primary)' : 'transparent',
-    color: active ? 'var(--style-text)' : 'var(--style-text)',
+    background: active ? 'var(--style-primary-gradient)' : 'transparent',
+    backgroundColor: active ? undefined : 'transparent',
+    color: 'var(--style-text-color)',
     opacity: active ? 1 : 0.7,
+    boxShadow: active ? 'var(--style-shadow)' : 'none',
   });
 
   return (

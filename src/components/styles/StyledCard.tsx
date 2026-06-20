@@ -16,7 +16,7 @@ export const StyledCard: React.FC<StyledCardProps> = ({
   const cardStyle: React.CSSProperties = {
     padding: '20px',
     borderRadius: 'var(--style-radius)',
-    backgroundColor: 'var(--style-bg)',
+    backgroundColor: 'var(--style-bg-color)',
     borderWidth: 'var(--style-border-width)',
     borderStyle: 'solid',
     borderColor: 'var(--style-border-color)',
@@ -51,6 +51,7 @@ export const StyledCard: React.FC<StyledCardProps> = ({
           style={{
             fontFamily: 'var(--style-font)',
             textShadow: 'var(--style-text-shadow)',
+            color: 'var(--style-text-color)',
           }}
         >
           {title}

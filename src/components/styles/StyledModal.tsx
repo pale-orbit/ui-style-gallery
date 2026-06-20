@@ -38,13 +38,14 @@ export const StyledModal: React.FC<StyledModalProps> = ({
     maxWidth: '90vw',
     padding: '24px',
     borderRadius: 'var(--style-radius)',
-    backgroundColor: 'var(--style-bg)',
+    backgroundColor: 'var(--style-bg-color)',
     borderWidth: 'var(--style-border-width)',
     borderStyle: 'solid',
     borderColor: 'var(--style-border-color)',
     boxShadow: 'var(--style-shadow)',
     backdropFilter: 'var(--style-backdrop-filter)',
     position: 'relative',
+    color: 'var(--style-text-color)',
   };
 
   return (
@@ -54,7 +55,10 @@ export const StyledModal: React.FC<StyledModalProps> = ({
           {title && (
             <h3
               className="text-lg font-semibold"
-              style={{ fontFamily: 'var(--style-font)' }}
+              style={{
+                fontFamily: 'var(--style-font)',
+                textShadow: 'var(--style-text-shadow)',
+              }}
             >
               {title}
             </h3>
@@ -62,7 +66,7 @@ export const StyledModal: React.FC<StyledModalProps> = ({
           <button
             onClick={onClose}
             className="p-1 rounded hover:opacity-70 transition-opacity"
-            style={{ color: 'var(--style-text)' }}
+            style={{ color: 'var(--style-text-color)' }}
           >
             <X size={18} />
           </button>

@@ -32,12 +32,13 @@ export const StyledInput: React.FC<StyledInputProps> = ({
     borderWidth: 'var(--style-border-width)',
     borderStyle: 'solid',
     borderColor: 'var(--style-border-color)',
-    backgroundColor: 'var(--style-bg)',
-    color: 'var(--style-text)',
+    backgroundColor: 'var(--style-bg-color)',
+    color: 'var(--style-text-color)',
     outline: 'none',
     transition: 'all 0.2s ease',
     fontFamily: 'var(--style-font)',
     boxShadow: focused ? 'var(--style-hover-shadow)' : 'var(--style-shadow)',
+    backdropFilter: 'var(--style-backdrop-filter)',
   };
 
   return (

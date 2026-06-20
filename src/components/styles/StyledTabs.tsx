@@ -24,7 +24,8 @@ export const StyledTabs: React.FC<StyledTabsProps> = ({
     display: 'inline-flex',
     padding: '4px',
     borderRadius: 'var(--style-radius)',
-    backgroundColor: 'var(--style-secondary)',
+    background: 'var(--style-secondary-gradient)',
+    backgroundColor: undefined,
     gap: '4px',
   };
 
@@ -36,8 +37,9 @@ export const StyledTabs: React.FC<StyledTabsProps> = ({
     fontFamily: 'var(--style-font)',
     fontSize: '14px',
     fontWeight: 500,
-    background: active ? 'var(--style-primary)' : 'transparent',
-    color: active ? 'var(--style-text)' : 'var(--style-text)',
+    background: active ? 'var(--style-primary-gradient)' : 'transparent',
+    backgroundColor: active ? undefined : 'transparent',
+    color: 'var(--style-text-color)',
     opacity: active ? 1 : 0.7,
     boxShadow: active ? 'var(--style-shadow)' : 'none',
   });

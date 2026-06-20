@@ -15,6 +15,21 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
   disabled = false,
   className = '',
 }) => {
+  const isGradient = (val: string) => val.startsWith('linear-gradient') || val.startsWith('radial-gradient');
+
+  const getBgForVariant = () => {
+    switch (variant) {
+      case 'primary':
+        return 'var(--style-primary-gradient)';
+      case 'secondary':
+        return 'var(--style-secondary-gradient)';
+      default:
+        return 'transparent';
+    }
+  };
+
+  const bg = getBgForVariant();
+
   const baseStyle: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
@@ -29,35 +44,44 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
     borderRadius: 'var(--style-radius)',
     borderWidth: 'var(--style-border-width)',
     fontFamily: 'var(--style-font)',
+    backdropFilter: 'var(--style-backdrop-filter)',
+    textShadow: 'var(--style-text-shadow)',
   };
 
   const getVariantStyle = (): React.CSSProperties => {
     switch (variant) {
-      case 'primary':
+      case 'primary': {
+        const primaryIsGradient = isGradient(String(bg));
         return {
-          background: 'var(--style-primary)',
-          color: 'var(--style-text)',
+          background: bg,
+          backgroundColor: primaryIsGradient ? undefined : 'var(--style-primary-color)',
+          color: 'var(--style-text-color)',
+          boxShadow: 'var(--style-shadow)',
+          borderColor: 'var(--style-border-color)',
+          opacity: 'var(--style-opacity)',
+        };
+      }
+      case 'secondary': {
+        const secondaryIsGradient = isGradient(String(bg));
+        return {
+          background: bg,
+          backgroundColor: secondaryIsGradient ? undefined : 'var(--style-secondary-color)',
+          color: 'var(--style-text-color)',
           boxShadow: 'var(--style-shadow)',
           borderColor: 'var(--style-border-color)',
         };
-      case 'secondary':
-        return {
-          background: 'var(--style-secondary)',
-          color: 'var(--style-text)',
-          boxShadow: 'var(--style-shadow)',
-          borderColor: 'var(--style-border-color)',
-        };
+      }
       case 'outline':
         return {
           background: 'transparent',
-          color: 'var(--style-text)',
+          color: 'var(--style-text-color)',
           borderColor: 'var(--style-border-color)',
           boxShadow: 'none',
         };
       case 'ghost':
         return {
           background: 'transparent',
-          color: 'var(--style-text)',
+          color: 'var(--style-text-color)',
           borderColor: 'transparent',
           boxShadow: 'none',
         };
@@ -66,24 +90,20 @@ export const StyledButton: React.FC<StyledButtonProps> = ({
     }
   };
 
-  const hoverStyle: React.CSSProperties = {
-    boxShadow: 'var(--style-hover-shadow)',
-    transform: 'translateY(-1px)',
-  };
-
   return (
     <button
       className={`styled-button ${className}`}
       style={{
         ...baseStyle,
         ...getVariantStyle(),
-        opacity: disabled ? 0.5 : 1,
+        opacity: disabled ? 0.5 : undefined,
       }}
       onClick={onClick}
       disabled={disabled}
       onMouseEnter={(e) => {
         if (!disabled) {
-          Object.assign(e.currentTarget.style, hoverStyle);
+          e.currentTarget.style.boxShadow = 'var(--style-hover-shadow)';
+          e.currentTarget.style.transform = 'translateY(-1px)';
         }
       }}
       onMouseLeave={(e) => {

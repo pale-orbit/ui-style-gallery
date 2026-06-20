@@ -20,7 +20,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
   const basicControls = (
     <div className="space-y-6">
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">按钮 Buttons</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          按钮 Buttons
+        </h4>
         <div className="flex flex-wrap gap-3">
           <StyledButton variant="primary">主要按钮</StyledButton>
           <StyledButton variant="secondary">次要按钮</StyledButton>
@@ -39,7 +41,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">开关与进度 Switches & Progress</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          开关与进度 Switches & Progress
+        </h4>
         <div className="flex flex-wrap gap-6 items-center">
           <StyledSwitch label="开启选项" defaultChecked />
           <StyledSwitch label="关闭选项" />
@@ -52,7 +56,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">标签页 Tabs</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          标签页 Tabs
+        </h4>
         <StyledTabs
           tabs={[
             { id: 'tab1', label: '概览' },
@@ -63,7 +69,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">导航栏 Navigation</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          导航栏 Navigation
+        </h4>
         <StyledNav />
       </div>
     </div>
@@ -72,28 +80,30 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
   const formGroup = (
     <div className="space-y-6">
       <div className="space-y-4">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">输入框 Inputs</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          输入框 Inputs
+        </h4>
         <div className="space-y-3 max-w-md">
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label className="text-sm font-medium flex items-center gap-2" style={{ color: 'var(--style-text-color)' }}>
               <User size={14} /> 用户名
             </label>
             <StyledInput placeholder="请输入用户名" />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label className="text-sm font-medium flex items-center gap-2" style={{ color: 'var(--style-text-color)' }}>
               <Mail size={14} /> 邮箱
             </label>
             <StyledInput type="email" placeholder="example@email.com" />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label className="text-sm font-medium flex items-center gap-2" style={{ color: 'var(--style-text-color)' }}>
               <Lock size={14} /> 密码
             </label>
             <StyledInput type="password" placeholder="请输入密码" />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium flex items-center gap-2">
+            <label className="text-sm font-medium flex items-center gap-2" style={{ color: 'var(--style-text-color)' }}>
               <Search size={14} /> 搜索
             </label>
             <StyledInput placeholder="搜索内容..." />
@@ -102,7 +112,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">表单选项 Form Options</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          表单选项 Form Options
+        </h4>
         <div className="space-y-3">
           <StyledSwitch label="接收通知邮件" defaultChecked />
           <StyledSwitch label="开启双重验证" />
@@ -123,16 +135,28 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
         <StyledCard title="数据统计">
           <div className="space-y-3">
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">总用户数</span>
-              <span className="text-xl font-bold">12,847</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                总用户数
+              </span>
+              <span className="text-xl font-bold" style={{ color: 'var(--style-text-color)' }}>
+                12,847
+              </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">今日活跃</span>
-              <span className="text-xl font-bold">3,256</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                今日活跃
+              </span>
+              <span className="text-xl font-bold" style={{ color: 'var(--style-text-color)' }}>
+                3,256
+              </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">转化率</span>
-              <span className="text-xl font-bold">24.8%</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                转化率
+              </span>
+              <span className="text-xl font-bold" style={{ color: 'var(--style-text-color)' }}>
+                24.8%
+              </span>
             </div>
             <StyledProgress value={68} showLabel={false} />
           </div>
@@ -141,16 +165,28 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
         <StyledCard title="项目概览">
           <div className="space-y-3">
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">进行中</span>
-              <span className="text-lg font-semibold">15</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                进行中
+              </span>
+              <span className="text-lg font-semibold" style={{ color: 'var(--style-text-color)' }}>
+                15
+              </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">已完成</span>
-              <span className="text-lg font-semibold">48</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                已完成
+              </span>
+              <span className="text-lg font-semibold" style={{ color: 'var(--style-text-color)' }}>
+                48
+              </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm opacity-70">待审核</span>
-              <span className="text-lg font-semibold">7</span>
+              <span className="text-sm opacity-70" style={{ color: 'var(--style-text-color)' }}>
+                待审核
+              </span>
+              <span className="text-lg font-semibold" style={{ color: 'var(--style-text-color)' }}>
+                7
+              </span>
             </div>
             <StyledProgress value={76} showLabel={false} />
           </div>
@@ -158,7 +194,9 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
       </div>
 
       <div className="space-y-3">
-        <h4 className="text-sm font-semibold opacity-70 mb-2">列表数据 List Data</h4>
+        <h4 className="text-sm font-semibold opacity-70 mb-2" style={{ color: 'var(--style-text-color)' }}>
+          列表数据 List Data
+        </h4>
         <div className="space-y-2">
           {[
             { name: '设计系统重构', status: '进行中', progress: 65 },
@@ -168,8 +206,12 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
             <StyledCard key={idx}>
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-medium">{item.name}</div>
-                  <div className="text-xs opacity-60">{item.status}</div>
+                  <div className="font-medium" style={{ color: 'var(--style-text-color)' }}>
+                    {item.name}
+                  </div>
+                  <div className="text-xs opacity-60" style={{ color: 'var(--style-text-color)' }}>
+                    {item.status}
+                  </div>
                 </div>
                 <StyledProgress value={item.progress} showLabel={false} className="w-24" />
               </div>
@@ -195,12 +237,15 @@ export const StyleComponentShowcase: React.FC<StyleComponentShowcaseProps> = ({ 
 
   return (
     <div>
-      <div className="mb-4 text-xs opacity-60 uppercase tracking-wider">
+      <div
+        className="mb-4 text-xs opacity-60 uppercase tracking-wider"
+        style={{ color: 'var(--style-text-color)' }}
+      >
         {componentGroupNames[group]}
       </div>
       {renderGroup()}
       <StyledModal isOpen={modal.isOpen} onClose={modal.close} title="示例弹窗">
-        <p className="text-sm opacity-80">
+        <p className="text-sm opacity-80" style={{ color: 'var(--style-text-color)' }}>
           这是一个使用当前风格渲染的弹窗示例。您可以看到弹窗的样式、按钮、阴影效果等都遵循了当前风格的设计语言。
         </p>
       </StyledModal>
